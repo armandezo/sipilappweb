@@ -10,22 +10,22 @@
     <div class="row">
       <div class="col">
         <label for="codigo">Código</label>
-        <input type="text" id="codigo" placeholder="Correlativo">
+        <input type="text" id="codigo" placeholder="Correlativo" [(ngModel)]="detalle.id" disabled>
       </div>
       <div class="col">
         <label for="empresa">Empresa</label>
-        <input type="text" id="empresa" placeholder="Empresa">
+        <input type="text" id="empresa" placeholder="Empresa" [(ngModel)]="detalle.id" disabled>
       </div>
       <div class="col">
         <label for="area">Área/Proyecto</label>
-        <input type="text" id="area" placeholder="Área / Proyecto">
+        <input type="text" id="area" placeholder="Área / Proyecto" [(ngModel)]="detalle.id" disabled>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="nombres">Nombres y Apellidos</label>
-        <input type="text" id="nombres" placeholder="Nombres y Apellidos">
+        <input type="text" id="nombres" placeholder="Nombres y Apellidos" >
       </div>
       <div class="col">
         <label for="dni">DNI</label>
@@ -58,19 +58,19 @@
     <div class="reporte-layout">
       <div class="left">
         <ul>
-          <li><input type="checkbox"> Mala postura corporal</li>
-          <li><input type="checkbox"> Trabajo con calzado inadecuado</li>
-          <li><input type="checkbox"> Ingerir bebidas calientes en el escritorio de trabajo</li>
-          <li><input type="checkbox"> Sobrecargar las instalaciones eléctricas</li>
-          <li><input type="checkbox"> Jugar/bromear durante el desarrollo de una actividad de riesgo</li>
-          <li><input type="checkbox"> Trabajar o permitir trabajar sin EPP's</li>
-          <li><input type="checkbox"> Operar equipos sin autorización</li>
-          <li><input type="checkbox"> Usar equipos defectuosos</li>
-          <li><input type="checkbox"> Trabajar bajo los efectos del alcohol y/o drogas</li>
-          <li><input type="checkbox"> Desactivar dispositivos de seguridad</li>
-          <li><input type="checkbox"> Cargar o levantar incorrectamente</li>
-          <li><input type="checkbox"> Dar servicio a equipo en funcionamiento</li>
-          <li><input type="checkbox"> Uso indebido de equipos o materiales</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct1" [checked]="detalle.repAct1" disabled /> Mala postura corporal</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct2" [checked]="detalle.repAct2" disabled /> Trabajo con calzado inadecuado</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct3" [checked]="detalle.repAct3" disabled /> Ingerir bebidas calientes en el escritorio de trabajo</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct4" [checked]="detalle.repAct4" disabled /> Sobrecargar las instalaciones eléctricas</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct5" [checked]="detalle.repAct5" disabled /> Jugar/bromear durante el desarrollo de una actividad de riesgo</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct6" [checked]="detalle.repAct6" disabled /> Trabajar o permitir trabajar sin EPP's</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct7" [checked]="detalle.repAct7" disabled /> Operar equipos sin autorización</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct8" [checked]="detalle.repAct8" disabled /> Usar equipos defectuosos</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct9" [checked]="detalle.repAct9" disabled /> Trabajar bajo los efectos del alcohol y/o drogas</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct10" [checked]="detalle.repAct10" disabled /> Desactivar dispositivos de seguridad</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct11" [checked]="detalle.repAct11" disabled /> Cargar o levantar incorrectamente</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct12" [checked]="detalle.repAct12" disabled /> Dar servicio a equipo en funcionamiento</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct13" [checked]="detalle.repAct13" disabled /> Uso indebido de equipos o materiales</li>
         </ul>
       </div>
 
