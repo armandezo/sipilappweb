@@ -25,6 +25,8 @@ export class LoginComponent {
       next: (response) => {
         console.log('Inicio de sesión exitoso:', response);
         this.errorMessage = '';
+        localStorage.setItem('name', response.name);
+        localStorage.setItem('lastname', response.lastname);
         this.isLoading = false;
         this.router.navigate(['/dashboard']);
       },
