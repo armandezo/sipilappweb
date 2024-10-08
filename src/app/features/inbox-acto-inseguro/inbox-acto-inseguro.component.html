@@ -1,0 +1,73 @@
+<app-header
+  [title]="'Inbox de Acto o Condición Insegura'"
+  [logoUrl]="'ruta-de-nuevo-logo.png'"
+  [headerImageUrl]="'ruta-de-nueva-imagen.png'">
+</app-header>
+
+<div class="container">
+  <div class="form-container">
+    <form class="form-grid">
+      <div class="form-group">
+        <label for="nombres">Nombres y Apellidos</label>
+        <input type="text" id="nombres" placeholder="Seleccionar Nombres o Apellidos del Empleado">
+      </div>
+      <div class="form-group">
+        <label for="lugar">Lugar de Hallazgo</label>
+        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo...">
+      </div>
+
+      <div class="form-group full-width">
+        <label for="tipo">Tipo de Hallazgo</label>
+        <input type="text" id="tipo" placeholder="Seleccionar el Acto Inseguro o Condición Insegura">
+      </div>
+
+      <div class="form-group">
+        <label for="fecha-desde">Fecha Desde</label>
+        <input type="date" id="fecha-desde">
+      </div>
+      <div class="form-group">
+        <label for="fecha-hasta">Fecha Hasta</label>
+        <input type="date" id="fecha-hasta">
+      </div>
+
+      <div class="form-group full-width">
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" placeholder="Estado del Acto Inseguro o Condición Insegura">
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn-buscar">Buscar</button>
+        <button type="reset" class="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-container">
+      <table>
+          <thead>
+              <tr>
+                  <th>Sociedad</th>
+                  <th>Nro. Correlativo</th>
+                  <th>Nombres y Apellidos</th>
+                  <th>Lugar de Hallazgo</th>
+                  <th>Tipo de Hallazgo</th>
+                  <th>Fecha Publicación</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Sociedad Ejemplo</td>
+                  <td>12345</td>
+                  <td>Juan Pérez</td>
+                  <td>Lugar X</td>
+                  <td>Condición Insegura</td>
+                  <td>2024-10-01</td>
+                  <td>Activo</td>
+                  <td><button class="btn-ver" (click)="navigateToConsultarActoInseguro()">Ver</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

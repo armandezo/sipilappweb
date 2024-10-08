@@ -1,0 +1,102 @@
+<app-header
+  [title]="'Consultar Acto Inseguro'"
+  [logoUrl]="'ruta-de-nuevo-logo.png'"
+  [headerImageUrl]="'ruta-de-nueva-imagen.png'">
+</app-header>
+
+<div class="container">
+  <div class="consultar-acto">
+    <h2>Consultar Acto Inseguro</h2>
+    <div class="row">
+      <div class="col">
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" placeholder="Correlativo">
+      </div>
+      <div class="col">
+        <label for="empresa">Empresa</label>
+        <input type="text" id="empresa" placeholder="Empresa">
+      </div>
+      <div class="col">
+        <label for="area">Área/Proyecto</label>
+        <input type="text" id="area" placeholder="Área / Proyecto">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="nombres">Nombres y Apellidos</label>
+        <input type="text" id="nombres" placeholder="Nombres y Apellidos">
+      </div>
+      <div class="col">
+        <label for="dni">DNI</label>
+        <input type="text" id="dni" placeholder="DNI">
+      </div>
+      <div class="col">
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" placeholder="Estado">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="responsable">Responsable</label>
+        <input type="text" id="responsable" placeholder="Responsable de Área/Proyecto">
+      </div>
+      <div class="col">
+        <label for="fecha">Fecha Publicación</label>
+        <input type="date" id="fecha">
+      </div>
+      <div class="col">
+        <label for="hora">Hora Publicación</label>
+        <input type="time" id="hora">
+      </div>
+    </div>
+  </div>
+
+  <div class="reporte-acto">
+    <h2>Reporte de Acto Inseguro</h2>
+    <div class="reporte-layout">
+      <div class="left">
+        <ul>
+          <li><input type="checkbox"> Mala postura corporal</li>
+          <li><input type="checkbox"> Trabajo con calzado inadecuado</li>
+          <li><input type="checkbox"> Ingerir bebidas calientes en el escritorio de trabajo</li>
+          <li><input type="checkbox"> Sobrecargar las instalaciones eléctricas</li>
+          <li><input type="checkbox"> Jugar/bromear durante el desarrollo de una actividad de riesgo</li>
+          <li><input type="checkbox"> Trabajar o permitir trabajar sin EPP's</li>
+          <li><input type="checkbox"> Operar equipos sin autorización</li>
+          <li><input type="checkbox"> Usar equipos defectuosos</li>
+          <li><input type="checkbox"> Trabajar bajo los efectos del alcohol y/o drogas</li>
+          <li><input type="checkbox"> Desactivar dispositivos de seguridad</li>
+          <li><input type="checkbox"> Cargar o levantar incorrectamente</li>
+          <li><input type="checkbox"> Dar servicio a equipo en funcionamiento</li>
+          <li><input type="checkbox"> Uso indebido de equipos o materiales</li>
+        </ul>
+      </div>
+
+      <div class="center">
+        <img src="ruta-de-imagen-default" alt="Imagen del Acto Inseguro" class="imagen-reporte">
+      </div>
+
+      <div class="right">
+        <div class="form-group">
+          <label for="otros">Otros (Describa lo que observó)</label>
+          <textarea id="otros"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="accion">¿Se tomó alguna acción inmediata?</label>
+          <textarea id="accion"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="sugerencia">¿Cuál sería la sugerencia de mejora?</label>
+          <textarea id="sugerencia"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button type="submit" class="btn-generar">Generar AC-AP</button>
+    <button type="button" class="btn-volver">Volver</button>
+  </div>
+</div>

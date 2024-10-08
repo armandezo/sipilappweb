@@ -25,7 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/styles/css/globals/views/collapsible.css",
+              "src/assets/styles/css/globals/views/line-tab.css",
+              "src/assets/styles/css/themes/dark-purple.css",
+              "src/assets/styles/css/themes/lite-blue.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -96,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

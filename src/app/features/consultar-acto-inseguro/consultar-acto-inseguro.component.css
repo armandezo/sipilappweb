@@ -1,0 +1,104 @@
+.consultar-acto {
+  margin-top: 20px;
+}
+
+.consultar-acto h2 {
+  background-color: #003f63;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.consultar-acto .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.consultar-acto .col {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.consultar-acto .col label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.consultar-acto .col input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reporte-acto h2 {
+  background-color: #003f63;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reporte-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.left ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.center {
+  grid-column: 2;
+  text-align: center;
+}
+
+.right {
+  grid-column: 3;
+}
+
+.right .form-group {
+  margin-bottom: 20px;
+}
+
+.right textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.imagen-reporte {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-generar, .btn-volver {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.btn-generar {
+  background-color: #006cb1;
+  color: white;
+}
+
+.btn-volver {
+  background-color: #dcdcdc;
+}
