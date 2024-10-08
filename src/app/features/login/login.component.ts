@@ -1,23 +1,38 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  constructor(private router: Router) {}
+  errorMessage: string = '';
+  isLoading: boolean = false;
+
+  constructor(private loginService: LoginService, private router: Router) {}
+
   login() {
-    if (this.username === 'Admin' && this.password === '123456') {
-      this.router.navigate(['/dashboard']);
-    } else {
-      alert('Credenciales incorrectas');
-    }
+    this.isLoading = true;
+    this.loginService.login(this.username, this.password).subscribe({
+      next: (response) => {
+        console.log('Inicio de sesión exitoso:', response);
+        this.errorMessage = '';
+        this.isLoading = false;
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        this.errorMessage = error.error?.message || 'Error en el inicio de sesión';
+        console.error('Error en el login:', error);
+        this.isLoading = false;
+      }
+    });
   }
 }
