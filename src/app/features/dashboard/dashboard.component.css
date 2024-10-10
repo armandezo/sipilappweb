@@ -80,3 +80,23 @@
   margin: 0;
   font-size: 14px;
 }
+
+.logout-section {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn-logout {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #ff3333;
+}
+

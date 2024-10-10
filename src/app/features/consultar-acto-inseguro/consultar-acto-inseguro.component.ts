@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { Router } from '@angular/router';
@@ -11,8 +11,13 @@ import { Router } from '@angular/router';
   templateUrl: './consultar-acto-inseguro.component.html',
   styleUrl: './consultar-acto-inseguro.component.css'
 })
-export class ConsultarActoInseguroComponent {
+export class ConsultarActoInseguroComponent implements OnInit {
+  detalle: any;
   constructor(private router: Router) {}
+  ngOnInit(): void {
+    this.detalle = history.state.data;
+    console.log("Detalle recibido:", this.detalle);
+  }
   navigateToConsultarActoInseguro() {
     this.router.navigate(['/consultar-acto-inseguro']);
   }

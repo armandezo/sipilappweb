@@ -7,8 +7,11 @@
 <div class="dashboard-container">
 
   <div class="content">
+    <div class="logout-section">
+      <button class="btn-logout" (click)="logout()">Cerrar sesión</button>
+    </div>
     <div class="welcome-section">
-      <h2>Bienvenid Nelly</h2>
+      <h2>Bienvenid {{ fullName }}</h2>
       <div class="actions">
         <button class="action-button" (click)="navigateToInboxActoInseguro()">Inbox de Acto o Condición Insegura</button>
         <button class="action-button">Registrar Acción Correctiva o Preventiva</button>

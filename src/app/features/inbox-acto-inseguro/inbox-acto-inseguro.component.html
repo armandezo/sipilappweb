@@ -6,28 +6,32 @@
 
 <div class="container">
   <div class="form-container">
-    <form class="form-grid">
+    <form class="form-grid" (ngSubmit)="buscar()">
       <div class="form-group">
         <label for="nombres">Nombres y Apellidos</label>
-        <input type="text" id="nombres" placeholder="Seleccionar Nombres o Apellidos del Empleado">
+        <input type="text" id="nombres" placeholder="Seleccionar Nombres o Apellidos del Empleado" [(ngModel)]="filtro.username" name="username">
       </div>
       <div class="form-group">
         <label for="lugar">Lugar de Hallazgo</label>
-        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo...">
+        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo..." [(ngModel)]="filtro.area" name="area">
       </div>
 
       <div class="form-group full-width">
         <label for="tipo">Tipo de Hallazgo</label>
-        <input type="text" id="tipo" placeholder="Seleccionar el Acto Inseguro o Condición Insegura">
+        <select id="tipo" [(ngModel)]="filtro.type" name="type" class="form-control">
+          <option value="">Seleccionar el Acto Inseguro o Condición Insegura</option>
+          <option value="action">Acto Inseguro</option>
+          <option value="condition">Condición Insegura</option>
+        </select>
       </div>
 
       <div class="form-group">
         <label for="fecha-desde">Fecha Desde</label>
-        <input type="date" id="fecha-desde">
+        <input type="date" id="fecha-desde" [(ngModel)]="filtro.fromDate" name="fromDate">
       </div>
       <div class="form-group">
         <label for="fecha-hasta">Fecha Hasta</label>
-        <input type="date" id="fecha-hasta">
+        <input type="date" id="fecha-hasta" [(ngModel)]="filtro.toDate" name="toDate">
       </div>
 
       <div class="form-group full-width">
@@ -36,38 +40,38 @@
       </div>
 
       <div class="buttons">
-        <button type="submit" class="btn-buscar">Buscar</button>
-        <button type="reset" class="btn-cancelar">Cancelar</button>
+        <button type="submit" class="btn-buscar" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Buscar</span>
+          <span *ngIf="isLoading">Cargando...</span>
+        </button>
+        <button type="button" class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       </div>
     </form>
   </div>
 
-  <div class="table-container">
-      <table>
-          <thead>
-              <tr>
-                  <th>Sociedad</th>
-                  <th>Nro. Correlativo</th>
-                  <th>Nombres y Apellidos</th>
-                  <th>Lugar de Hallazgo</th>
-                  <th>Tipo de Hallazgo</th>
-                  <th>Fecha Publicación</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Sociedad Ejemplo</td>
-                  <td>12345</td>
-                  <td>Juan Pérez</td>
-                  <td>Lugar X</td>
-                  <td>Condición Insegura</td>
-                  <td>2024-10-01</td>
-                  <td>Activo</td>
-                  <td><button class="btn-ver" (click)="navigateToConsultarActoInseguro()">Ver</button></td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
+<div class="table-container" *ngIf="resultados.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Ubicación</th>
+        <th>Tipo</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let resultado of resultados">
+        <td>{{ resultado.date }}</td>
+        <td>{{ resultado.hour }}</td>
+        <td>{{ resultado.location }}</td>
+        <td>{{ resultado.type === 'action' ? 'Acto Inseguro' : 'Condición Insegura' }}</td>
+        <td>{{ resultado.status }}</td>
+        <td><button class="btn-ver" (click)="navigateToConsultarActoInseguro(resultado)">Ver</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
