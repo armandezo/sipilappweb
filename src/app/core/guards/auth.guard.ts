@@ -19,7 +19,13 @@ export class AuthGuard implements CanActivate {
   }
 
   isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token;
+    // Verificar si estamos en el entorno del navegador antes de usar localStorage
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('token');
+      return !!token;
+    }
+
+    // Si estamos en el servidor (sin acceso a localStorage), no se considera autenticado
+    return false;
   }
 }

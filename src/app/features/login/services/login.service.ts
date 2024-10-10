@@ -20,7 +20,10 @@ export class LoginService {
     return this.http.post<any>(this.apiUrl, body, { headers }).pipe(
       map((response: any) => {
         if (response.success) {
-          localStorage.setItem('token', response.token);
+          // Verificar si el entorno es un navegador antes de usar localStorage
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('token', response.token);
+          }
           return response.data;
         }
         return null;
