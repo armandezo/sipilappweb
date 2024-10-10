@@ -11,18 +11,29 @@ import { HeaderComponent } from '../../shared/header/header.component';
 })
 export class DashboardComponent implements OnInit {
   fullName: string = '';
-  constructor(private router: Router) {}
+  isBrowser: boolean = false;
+
+  constructor(private router: Router) {
+    // Verificar si estamos en el entorno del navegador
+    this.isBrowser = typeof window !== 'undefined';
+  }
 
   ngOnInit(): void {
-    const name = localStorage.getItem('name') || '';
-    const lastname = localStorage.getItem('lastname') || '';
-    this.fullName = `${name} ${lastname}`;
+    // Verificar si estamos en el navegador antes de usar localStorage
+    if (this.isBrowser) {
+      const name = localStorage.getItem('name') || '';
+      const lastname = localStorage.getItem('lastname') || '';
+      this.fullName = `${name} ${lastname}`;
+    }
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('lastname');
+    // Verificar si estamos en el navegador antes de usar localStorage
+    if (this.isBrowser) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('name');
+      localStorage.removeItem('lastname');
+    }
     this.router.navigate(['/login']);
   }
 

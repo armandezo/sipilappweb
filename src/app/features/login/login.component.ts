@@ -16,8 +16,12 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
   isLoading: boolean = false;
+  isBrowser: boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router) {
+    // Verificar si estamos en el entorno del navegador
+    this.isBrowser = typeof window !== 'undefined';
+  }
 
   login() {
     this.isLoading = true;
@@ -25,8 +29,13 @@ export class LoginComponent {
       next: (response) => {
         console.log('Inicio de sesión exitoso:', response);
         this.errorMessage = '';
-        localStorage.setItem('name', response.name);
-        localStorage.setItem('lastname', response.lastname);
+
+        // Verificar si estamos en el navegador antes de usar localStorage
+        if (this.isBrowser) {
+          localStorage.setItem('name', response.name);
+          localStorage.setItem('lastname', response.lastname);
+        }
+
         this.isLoading = false;
         this.router.navigate(['/dashboard']);
       },
