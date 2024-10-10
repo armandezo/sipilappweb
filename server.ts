@@ -44,7 +44,7 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 4000; // Ajuste realizado aquí
 
   // Start up the Node server
   const server = app();
@@ -54,3 +54,5 @@ function run(): void {
 }
 
 run();
+
+
