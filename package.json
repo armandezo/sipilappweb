@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node dist/sipil-web/server/main.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:sipil-web": "node dist/sipil-web/server/server.mjs"
+    "serve:ssr": "node dist/sipil-web/server/main.js",
+    "build:ssr": "ng build --prod && ng run sipil-web:server",
+    "serve:ssr:build": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
