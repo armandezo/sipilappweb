@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sipil-web:build:production"
+              "buildTarget": "sipil-web:build:production"
             },
             "development": {
-              "browserTarget": "sipil-web:build:development"
+              "buildTarget": "sipil-web:build:development"
             }
           },
           "defaultConfiguration": "development"

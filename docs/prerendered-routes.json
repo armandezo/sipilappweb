@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/consultar-acto-inseguro",
+    "/dashboard",
+    "/inbox-acto-inseguro",
+    "/login"
+  ]
+}
