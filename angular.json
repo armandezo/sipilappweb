@@ -32,8 +32,40 @@
               "src/assets/styles/css/themes/lite-blue.css"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
+            "server": {
+              "builder": "@angular-devkit/build-angular:server",
+              "options": {
+                "outputPath": "dist/sipil-web-server",
+                "main": "src/main.server.ts",
+                "tsConfig": "tsconfig.server.json"
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "src/environments/environment.ts",
+                      "with": "src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "sourceMap": false,
+                  "optimization": true
+                },
+                "development": {
+                  "sourceMap": true,
+                  "optimization": false
+                }
+              }
+            },
+            "prerender": {
+              "builder": "@nguniversal/builders:prerender",
+              "options": {
+                "browserTarget": "sipil-web:build:production",
+                "serverTarget": "sipil-web:server:production",
+                "routes": [
+                  "/"
+                ]
+              }
+            },
             "ssr": {
               "entry": "server.ts"
             }
@@ -72,10 +104,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sipil-web:build:production"
+              "browserTarget": "sipil-web:build:production"
             },
             "development": {
-              "buildTarget": "sipil-web:build:development"
+              "browserTarget": "sipil-web:build:development"
             }
           },
           "defaultConfiguration": "development"
