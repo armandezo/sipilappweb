@@ -34,6 +34,13 @@ export class ConsultarActoInseguroComponent implements OnInit {
     } else {
       console.log("SSR: No hay acceso a 'history' en el servidor");
     }
+
+  }
+
+  volver() {
+    // Puedes navegar a una ruta específica
+    // this.router.navigate(['/inbox-acto-inseguro']); // O a la ruta que desees
+    window.history.back();
   }
 
 

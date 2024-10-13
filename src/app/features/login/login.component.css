@@ -23,14 +23,14 @@
 }
 
 .btn-primary {
-  background-color: #006CB1;
-  border-color: #006CB1;
+  background-color: #004254;
+  border-color: #004254;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #005299;
-  border-color: #005299;
+  background-color: #004254;
+  border-color: #004254;
 }
 
 .form-control {
