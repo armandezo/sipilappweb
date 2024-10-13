@@ -20,7 +20,9 @@ export class InboxActoInseguroComponent {
     area: '',
     fromDate: '',
     toDate: '',
-    type: '', // aquí se guardará el valor del select
+    type: '',
+    status:  '',
+    location: ''
   };
   resultados: any[] = [];
   errorMessage = '';
@@ -51,13 +53,18 @@ export class InboxActoInseguroComponent {
       fromDate: '',
       toDate: '',
       type: '',
+      status: '',
+      location: ''
     };
 
     this.resultados = [];
     this.errorMessage = '';
   }
+
+  formValid() {
+    return this.filtro.type !== '' && this.filtro.status !== '';
+  }
   navigateToConsultarActoInseguro(detalle: any) {
-    console.log("Detalle que se envía:", detalle);
     this.router.navigate(['/consultar-acto-inseguro'], {
       state: { data: detalle }
     });

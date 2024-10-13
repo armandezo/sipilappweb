@@ -18,18 +18,17 @@ export class ConsultarActoInseguroComponent implements OnInit {
 
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object // Inyección de platformId para verificar si estamos en el navegador
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Este bloque solo se ejecuta en el navegador
       if (history.state && history.state.data) {
         this.detalle = history.state.data;
         console.log("Detalle recibido:", this.detalle);
       } else {
         console.log("No hay datos en el estado de history.");
-        this.detalle = {};  // Valor por defecto o manejo de ausencia de datos
+        this.detalle = {};
       }
     } else {
       console.log("SSR: No hay acceso a 'history' en el servidor");
@@ -38,8 +37,6 @@ export class ConsultarActoInseguroComponent implements OnInit {
   }
 
   volver() {
-    // Puedes navegar a una ruta específica
-    // this.router.navigate(['/inbox-acto-inseguro']); // O a la ruta que desees
     window.history.back();
   }
 

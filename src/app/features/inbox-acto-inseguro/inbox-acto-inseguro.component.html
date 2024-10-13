@@ -1,7 +1,7 @@
 <app-header
   [title]="'Inbox de Acto o Condición Insegura'"
-  [logoUrl]="'ruta-de-nuevo-logo.png'"
-  [headerImageUrl]="'ruta-de-nueva-imagen.png'">
+  [logoUrl]="'assets/images/indra/logo_indra.png'"
+  [headerImageUrl]="'assets/images/indra/edificio_indra.png'">
 </app-header>
 
 <div class="container">
@@ -13,15 +13,26 @@
       </div>
       <div class="form-group">
         <label for="lugar">Lugar de Hallazgo</label>
-        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo..." [(ngModel)]="filtro.area" name="area">
+        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo..." [(ngModel)]="filtro.location" name="area">
       </div>
 
-      <div class="form-group full-width">
-        <label for="tipo">Tipo de Hallazgo</label>
-        <select id="tipo" [(ngModel)]="filtro.type" name="type" class="form-control">
+      <div class="form-group">
+        <label for="tipo">Tipo de Hallazgo *</label>
+        <select id="tipo" [(ngModel)]="filtro.type" name="type" class="form-control" required>
           <option value="">Seleccionar el Acto Inseguro o Condición Insegura</option>
           <option value="action">Acto Inseguro</option>
           <option value="condition">Condición Insegura</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="estado">Estado *  </label>
+        <select id="tipo" [(ngModel)]="filtro.status" name="status" class="form-control" required>
+          <option value="">Seleccionar un estado</option>
+          <option value="abierto">Abierto</option>
+          <option value="implementado">Implementado</option>
+          <option value="cerrado">Cerrado</option>
+          <option value="cancelado">Cancelado</option>
         </select>
       </div>
 
@@ -34,13 +45,8 @@
         <input type="date" id="fecha-hasta" [(ngModel)]="filtro.toDate" name="toDate">
       </div>
 
-      <div class="form-group full-width">
-        <label for="estado">Estado</label>
-        <input type="text" id="estado" placeholder="Estado del Acto Inseguro o Condición Insegura">
-      </div>
-
       <div class="buttons">
-        <button type="submit" class="btn-buscar" [disabled]="isLoading">
+        <button type="submit" class="btn-buscar" [disabled]="isLoading || !formValid()">
           <span *ngIf="!isLoading">Buscar</span>
           <span *ngIf="isLoading">Cargando...</span>
         </button>
