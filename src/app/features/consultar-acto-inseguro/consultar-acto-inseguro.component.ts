@@ -14,7 +14,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './consultar-acto-inseguro.component.css'
 })
 export class ConsultarActoInseguroComponent implements OnInit {
-  detalle: any;
+  detalle: any = {};
 
   constructor(
     private router: Router,
