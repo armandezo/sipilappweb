@@ -14,22 +14,22 @@
       </div>
       <div class="col">
         <label for="empresa">Empresa</label>
-        <input type="text" id="empresa" placeholder="Empresa" [(ngModel)]="detalle.user.company.name" disabled>
+        <input type="text" id="empresa" placeholder="Empresa" [(ngModel)]="detalle.user?.company.name" disabled>
       </div>
       <div class="col">
         <label for="area">Área/Proyecto</label>
-        <input type="text" id="area" placeholder="Área / Proyecto" [(ngModel)]="detalle.user.project" disabled>
+        <input type="text" id="area" placeholder="Área / Proyecto" [value]="detalle.user?.project" disabled>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="nombres">Nombres y Apellidos</label>
-        <input type="text" id="nombres" placeholder="Nombres y Apellidos" [(ngModel)]="detalle.user.name" disabled>
+        <input type="text" id="nombres" placeholder="Nombres y Apellidos"  [value]="detalle.user?.name" disabled>
       </div>
       <div class="col">
         <label for="dni">DNI</label>
-        <input type="text" id="dni" placeholder="DNI" [(ngModel)]="detalle.user.dni" disabled>
+        <input type="text" id="dni" placeholder="DNI" [value]="detalle.user?.dni" disabled>
       </div>
       <div class="col">
         <label for="estado">Estado</label>
@@ -40,7 +40,7 @@
     <div class="row">
       <div class="col">
         <label for="responsable">Responsable</label>
-        <input type="text" id="responsable" placeholder="Responsable de Área/Proyecto" [(ngModel)]="detalle.user.project_manager" disabled>
+        <input type="text" id="responsable" placeholder="Responsable de Área/Proyecto" [value]="detalle.user?.project_manager" disabled>
       </div>
       <div class="col">
         <label for="fecha">Fecha Publicación</label>

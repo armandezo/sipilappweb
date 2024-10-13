@@ -26,6 +26,7 @@ export class ConsultarActoInseguroComponent implements OnInit {
       if (history.state && history.state.data) {
         this.detalle = history.state.data;
         console.log("Detalle recibido:", this.detalle);
+        this.detalle.user = this.detalle.user || {};
       } else {
         console.log("No hay datos en el estado de history.");
         this.detalle = {};
