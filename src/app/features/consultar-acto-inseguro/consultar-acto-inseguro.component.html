@@ -1,7 +1,7 @@
 <app-header
   [title]="'Consultar Acto Inseguro'"
-  [logoUrl]="'ruta-de-nuevo-logo.png'"
-  [headerImageUrl]="'ruta-de-nueva-imagen.png'">
+  [logoUrl]="'assets/images/indra/logo_indra.png'"
+  [headerImageUrl]="'assets/images/indra/edificio_indra.png'">
 </app-header>
 
 <div class="container">
@@ -14,41 +14,41 @@
       </div>
       <div class="col">
         <label for="empresa">Empresa</label>
-        <input type="text" id="empresa" placeholder="Empresa" [(ngModel)]="detalle.id" disabled>
+        <input type="text" id="empresa" placeholder="Empresa" [(ngModel)]="detalle.user.company.name" disabled>
       </div>
       <div class="col">
         <label for="area">Área/Proyecto</label>
-        <input type="text" id="area" placeholder="Área / Proyecto" [(ngModel)]="detalle.id" disabled>
+        <input type="text" id="area" placeholder="Área / Proyecto" [(ngModel)]="detalle.user.project" disabled>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="nombres">Nombres y Apellidos</label>
-        <input type="text" id="nombres" placeholder="Nombres y Apellidos" >
+        <input type="text" id="nombres" placeholder="Nombres y Apellidos" [(ngModel)]="detalle.user.name" disabled>
       </div>
       <div class="col">
         <label for="dni">DNI</label>
-        <input type="text" id="dni" placeholder="DNI">
+        <input type="text" id="dni" placeholder="DNI" [(ngModel)]="detalle.user.dni" disabled>
       </div>
       <div class="col">
         <label for="estado">Estado</label>
-        <input type="text" id="estado" placeholder="Estado">
+        <input type="text" id="estado" placeholder="Estado" [(ngModel)]="detalle.status" disabled>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="responsable">Responsable</label>
-        <input type="text" id="responsable" placeholder="Responsable de Área/Proyecto">
+        <input type="text" id="responsable" placeholder="Responsable de Área/Proyecto" [(ngModel)]="detalle.user.project_manager" disabled>
       </div>
       <div class="col">
         <label for="fecha">Fecha Publicación</label>
-        <input type="date" id="fecha">
+        <input type="date" id="fecha" [(ngModel)]="detalle.date" disabled>
       </div>
       <div class="col">
         <label for="hora">Hora Publicación</label>
-        <input type="time" id="hora">
+        <input type="time" id="hora" [(ngModel)]="detalle.hour" disabled>
       </div>
     </div>
   </div>
@@ -75,21 +75,21 @@
       </div>
 
       <div class="center">
-        <img src="ruta-de-imagen-default" alt="Imagen del Acto Inseguro" class="imagen-reporte">
+        <img src="assets/images/indra/savety.png" alt="Imagen del Acto Inseguro" class="imagen-reporte">
       </div>
 
       <div class="right">
         <div class="form-group">
           <label for="otros">Otros (Describa lo que observó)</label>
-          <textarea id="otros"></textarea>
+          <textarea id="otros" disabled></textarea>
         </div>
         <div class="form-group">
           <label for="accion">¿Se tomó alguna acción inmediata?</label>
-          <textarea id="accion"></textarea>
+          <textarea id="accion" [(ngModel)]="detalle.immediate_action" disabled></textarea>
         </div>
         <div class="form-group">
           <label for="sugerencia">¿Cuál sería la sugerencia de mejora?</label>
-          <textarea id="sugerencia"></textarea>
+          <textarea id="sugerencia" [(ngModel)]="detalle.suggestion_improvement" disabled></textarea>
         </div>
       </div>
     </div>
