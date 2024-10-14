@@ -61,6 +61,8 @@
   <table>
     <thead>
       <tr>
+        <th>Nombres y Apellidos</th>
+        <th>Lugar de Hallazgo</th>
         <th>Fecha</th>
         <th>Hora</th>
         <th>Ubicación</th>
@@ -71,6 +73,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let resultado of resultados">
+        <td>{{ resultado.user?.name }} {{ resultado.user?.lastname }}</td>
+        <td>{{ resultado.location }}</td>
         <td>{{ resultado.date }}</td>
         <td>{{ resultado.hour }}</td>
         <td>{{ resultado.location }}</td>

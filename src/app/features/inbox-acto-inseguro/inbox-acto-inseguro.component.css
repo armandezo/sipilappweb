@@ -42,7 +42,7 @@ h1 {
 }
 
 .sub-header {
-  background-color: #006cb1;
+  background-color: #004254;
   width: 100%;
   text-align: center;
   color: white;
@@ -103,7 +103,7 @@ h1 {
 }
 
 .btn-buscar {
-  background-color: #003f63;
+  background-color: #004254;
   color: white;
 }
 
@@ -128,7 +128,7 @@ table th, table td {
 }
 
 table th {
-  background-color: #2d72b5;
+  background-color: #004254;
   color: white;
 }
 
@@ -137,7 +137,7 @@ table tr:nth-child(even) {
 }
 
 .btn-ver {
-  background-color: #006cb1;
+  background-color: #004254;
   color: white;
   padding: 5px 10px;
   border: none;
@@ -146,7 +146,7 @@ table tr:nth-child(even) {
 }
 
 .btn-ver:hover {
-  background-color: #005499;
+  background-color: #004254;
 }
 
 .form-group select {

@@ -1,12 +1,12 @@
 <app-header
-  [title]="'Consultar Acto Inseguro'"
+  [title]="''"
   [logoUrl]="'assets/images/indra/logo_indra.png'"
   [headerImageUrl]="'assets/images/indra/edificio_indra.png'">
 </app-header>
 
 <div class="container">
   <div class="consultar-acto">
-    <h2>Consultar Acto Inseguro</h2>
+    <h2>{{ detalle.type === 'action' ? 'Consultar Acto Inseguro' : 'Consultar Condición Insegura' }}</h2>
     <div class="row">
       <div class="col">
         <label for="codigo">Código</label>
@@ -75,7 +75,7 @@
       </div>
 
       <div class="center">
-        <img src="assets/images/indra/savety.png" alt="Imagen del Acto Inseguro" class="imagen-reporte">
+        <img [src]="detalle.img ? detalle.img : 'assets/images/indra/savety.png'" alt="Imagen del Acto Inseguro" class="imagen-reporte">
       </div>
 
       <div class="right">

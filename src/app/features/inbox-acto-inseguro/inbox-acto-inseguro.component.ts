@@ -59,6 +59,7 @@ export class InboxActoInseguroComponent {
 
     this.resultados = [];
     this.errorMessage = '';
+    window.history.back();
   }
 
   formValid() {
