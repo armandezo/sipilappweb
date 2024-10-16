@@ -54,23 +54,23 @@
   </div>
 
   <div class="reporte-acto">
-    <h2>Reporte de Acto Inseguro</h2>
+    <h2>{{ detalle.type === 'action' ? 'Reporte de Acto Inseguro' : 'Reporte Condición Insegura' }}</h2>
     <div class="reporte-layout">
       <div class="left">
         <ul>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct1" [checked]="detalle.repAct1" disabled /> Mala postura corporal</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct2" [checked]="detalle.repAct2" disabled /> Trabajo con calzado inadecuado</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct3" [checked]="detalle.repAct3" disabled /> Ingerir bebidas calientes en el escritorio de trabajo</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct4" [checked]="detalle.repAct4" disabled /> Sobrecargar las instalaciones eléctricas</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct5" [checked]="detalle.repAct5" disabled /> Jugar/bromear durante el desarrollo de una actividad de riesgo</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct6" [checked]="detalle.repAct6" disabled /> Trabajar o permitir trabajar sin EPP's</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct7" [checked]="detalle.repAct7" disabled /> Operar equipos sin autorización</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct8" [checked]="detalle.repAct8" disabled /> Usar equipos defectuosos</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct9" [checked]="detalle.repAct9" disabled /> Trabajar bajo los efectos del alcohol y/o drogas</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct10" [checked]="detalle.repAct10" disabled /> Desactivar dispositivos de seguridad</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct11" [checked]="detalle.repAct11" disabled /> Cargar o levantar incorrectamente</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct12" [checked]="detalle.repAct12" disabled /> Dar servicio a equipo en funcionamiento</li>
-          <li><input type="checkbox" [(ngModel)]="detalle.repAct13" [checked]="detalle.repAct13" disabled /> Uso indebido de equipos o materiales</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct1" [checked]="detalle.repAct1" disabled /> {{ detalle.type === 'action' ? 'Mala postura corporal' : 'Falta de orden y limpieza' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct2" [checked]="detalle.repAct2" disabled /> {{ detalle.type === 'action' ? 'Trabajo con calzado inadecuado' : 'Guardas o barreras inadecuadas' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct3" [checked]="detalle.repAct3" disabled /> {{ detalle.type === 'action' ? 'Ingerir bebidas calientes en el escritorio de trabajo' : 'Pasamanos de las escaleras inadecuadas o mal estado' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct4" [checked]="detalle.repAct4" disabled /> {{ detalle.type === 'action' ? 'Sobrecargar las instalaciones eléctricas' : 'Iluminación deficiente/excesiva en el ambiente de trabajo' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct5" [checked]="detalle.repAct5" disabled /> {{ detalle.type === 'action' ? 'Jugar/bromear durante el desarrollo de una actividad de riesgo' : 'Equipos de protección personal incorrectos o inadecuados' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct6" [checked]="detalle.repAct6" disabled /> {{ detalle.type === 'action' ? 'Trabajar o permitir trabajar sin EPP's' : 'Ruido excesivo en el área de trabajo' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct7" [checked]="detalle.repAct7" disabled /> {{ detalle.type === 'action' ? 'Operar equipos sin autorización' : 'Piso en mal estado' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct8" [checked]="detalle.repAct8" disabled /> {{ detalle.type === 'action' ? 'Usar equipos defectuosos' : 'Ascensores en mal estado' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct9" [checked]="detalle.repAct9" disabled /> {{ detalle.type === 'action' ? 'Trabajar bajo los efectos del alcohol y/o drogas' : 'Falta de señalización en área o equipo' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct10" [checked]="detalle.repAct10" disabled /> {{ detalle.type === 'action' ? 'Desactivar dispositivos de seguridad' : 'Presencian de polvos/gases en el área de trabajo' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct11" [checked]="detalle.repAct11" disabled /> {{ detalle.type === 'action' ? 'Cargar o levantar incorrectamente' : 'Condiciones de trabajo peligrosas' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct12" [checked]="detalle.repAct12" disabled /> {{ detalle.type === 'action' ? 'Dar servicio a equipo en funcionamiento' : 'Herramientas y equipos defectuosos' }}</li>
+          <li><input type="checkbox" [(ngModel)]="detalle.repAct13" [checked]="detalle.repAct13" disabled /> {{ detalle.type === 'action' ? 'Uso indebido de equipos o materiales' : 'Materiales químicos peligrosos expuestos' }}</li>
         </ul>
       </div>
 
