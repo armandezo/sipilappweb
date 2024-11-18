@@ -1,7 +1,8 @@
 <app-header
   [title]="'Inbox de Acto o Condición Insegura'"
   [logoUrl]="'assets/images/indra/logo_indra.png'"
-  [headerImageUrl]="'assets/images/indra/edificio_indra.png'">
+  [headerImageUrl]="'assets/images/indra/edificio_indra.png'"
+>
 </app-header>
 
 <div class="container">
@@ -9,25 +10,51 @@
     <form class="form-grid" (ngSubmit)="buscar()">
       <div class="form-group">
         <label for="nombres">Nombres y Apellidos</label>
-        <input type="text" id="nombres" placeholder="Seleccionar Nombres o Apellidos del Empleado" [(ngModel)]="filtro.username" name="username">
+        <input
+          type="text"
+          id="nombres"
+          placeholder="Seleccionar Nombres o Apellidos del Empleado"
+          [(ngModel)]="filtro.username"
+          name="username"
+        />
       </div>
       <div class="form-group">
         <label for="lugar">Lugar de Hallazgo</label>
-        <input type="text" id="lugar" placeholder="Seleccionar el Lugar del Hallazgo..." [(ngModel)]="filtro.location" name="area">
+        <input
+          type="text"
+          id="lugar"
+          placeholder="Seleccionar el Lugar del Hallazgo..."
+          [(ngModel)]="filtro.location"
+          name="area"
+        />
       </div>
 
       <div class="form-group">
         <label for="tipo">Tipo de Hallazgo *</label>
-        <select id="tipo" [(ngModel)]="filtro.type" name="type" class="form-control" required>
-          <option value="">Seleccionar el Acto Inseguro o Condición Insegura</option>
+        <select
+          id="tipo"
+          [(ngModel)]="filtro.type"
+          name="type"
+          class="form-control"
+          required
+        >
+          <option value="">
+            Seleccionar el Acto Inseguro o Condición Insegura
+          </option>
           <option value="action">Acto Inseguro</option>
           <option value="condition">Condición Insegura</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="estado">Estado *  </label>
-        <select id="tipo" [(ngModel)]="filtro.status" name="status" class="form-control" required>
+        <label for="estado">Estado * </label>
+        <select
+          id="tipo"
+          [(ngModel)]="filtro.status"
+          name="status"
+          class="form-control"
+          required
+        >
           <option value="">Seleccionar un estado</option>
           <option value="abierto">Abierto</option>
           <option value="implementado">Implementado</option>
@@ -39,50 +66,81 @@
 
       <div class="form-group">
         <label for="fecha-desde">Fecha Desde</label>
-        <input type="date" id="fecha-desde" [(ngModel)]="filtro.fromDate" name="fromDate">
+        <input
+          type="date"
+          id="fecha-desde"
+          [(ngModel)]="filtro.fromDate"
+          name="fromDate"
+        />
       </div>
       <div class="form-group">
         <label for="fecha-hasta">Fecha Hasta</label>
-        <input type="date" id="fecha-hasta" [(ngModel)]="filtro.toDate" name="toDate">
+        <input
+          type="date"
+          id="fecha-hasta"
+          [(ngModel)]="filtro.toDate"
+          name="toDate"
+        />
       </div>
 
       <div class="buttons">
-        <button type="submit" class="btn-buscar" [disabled]="isLoading || !formValid()">
+        <button
+          type="submit"
+          class="btn-buscar"
+          [disabled]="isLoading || !formValid()"
+        >
           <span *ngIf="!isLoading">Buscar</span>
           <span *ngIf="isLoading">Cargando...</span>
         </button>
-        <button type="button" class="btn-cancelar" (click)="cancelar()">Cancelar</button>
-        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+        <button type="button" class="btn-cancelar" (click)="cancelar()">
+          Cancelar
+        </button>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
       </div>
     </form>
   </div>
 
-<div class="table-container" *ngIf="resultados.length > 0">
-  <table>
-    <thead>
-      <tr>
-        <th>Nombres y Apellidos</th>
-        <th>Lugar de Hallazgo</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-        <th>Ubicación</th>
-        <th>Tipo</th>
-        <th>Estado</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let resultado of resultados">
-        <td>{{ resultado.user?.name }} {{ resultado.user?.lastname }}</td>
-        <td>{{ resultado.location }}</td>
-        <td>{{ resultado.date }}</td>
-        <td>{{ resultado.hour }}</td>
-        <td>{{ resultado.location }}</td>
-        <td>{{ resultado.type === 'action' ? 'Acto Inseguro' : 'Condición Insegura' }}</td>
-        <td>{{ resultado.status }}</td>
-        <td><button class="btn-ver" (click)="navigateToConsultarActoInseguro(resultado)">Ver</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="table-container" *ngIf="resultados.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres y Apellidos</th>
+          <th>Lugar de Hallazgo</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Ubicación</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resultado of resultados">
+          <td>{{ resultado.user?.name }} {{ resultado.user?.lastname }}</td>
+          <td>{{ resultado.location }}</td>
+          <td>{{ resultado.date }}</td>
+          <td>{{ resultado.hour }}</td>
+          <td>{{ resultado.location }}</td>
+          <td>
+            {{
+              resultado.type === "action"
+                ? "Acto Inseguro"
+                : "Condición Insegura"
+            }}
+          </td>
+          <td>{{ resultado.status }}</td>
+          <td>
+            <button
+              class="btn-ver"
+              (click)="navigateToConsultarActoInseguro(resultado)"
+            >
+              Ver
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
