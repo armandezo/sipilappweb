@@ -17,7 +17,12 @@ import { HeaderComponent } from '../../shared/header/header.component';
 })
 export class RegistrarAccionCorrectivaComponent {
   form: FormGroup;
-  sociedades = ['Sociedad A', 'Sociedad B', 'Sociedad C'];
+  sociedades = [
+    'INDRA PERÚ S.A.',
+    'INDRA SERVICIOS PERÚ S.A.C.',
+    'INDRA T & D S.A.C.',
+    'MINSAIT PAYMENT SYSTEMS PERÚ S.A.C.',
+  ];
   tipos = [
     'Acto Inseguro',
     'Condición Insegura',
@@ -25,8 +30,13 @@ export class RegistrarAccionCorrectivaComponent {
     'Auditoría Externa',
     'Auditoría Interna',
   ];
-  origenes = ['Origen 1', 'Origen 2', 'Origen 3'];
-  responsables = ['Responsable 1', 'Responsable 2', 'Responsable 3'];
+  origenes = [
+    'Administración',
+    'Seguridad y Salud en el Trabajo',
+    'Logística',
+    'Gerencia',
+    'Proyectos',
+  ];
   estados = [
     { value: '', label: 'Seleccionar un estado' },
     { value: 'abierto', label: 'Abierto' },

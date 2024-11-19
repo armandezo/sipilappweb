@@ -89,34 +89,20 @@
       </div>
       <div class="form-group">
         <label for="responsableCorrectiva">Responsable</label>
-        <select
+        <input
           id="responsableCorrectiva"
+          type="text"
           formControlName="responsableCorrectiva"
-        >
-          <option value="">Seleccionar el Responsable...</option>
-          <option
-            *ngFor="let responsable of responsables"
-            [value]="responsable"
-          >
-            {{ responsable }}
-          </option>
-        </select>
+        />
       </div>
 
       <div class="form-group">
         <label for="responsablePreventiva">Responsable</label>
-        <select
+        <input
           id="responsablePreventiva"
+          type="text"
           formControlName="responsablePreventiva"
-        >
-          <option value="">Seleccionar el Responsable...</option>
-          <option
-            *ngFor="let responsable of responsables"
-            [value]="responsable"
-          >
-            {{ responsable }}
-          </option>
-        </select>
+        />
       </div>
 
       <div class="form-group">
