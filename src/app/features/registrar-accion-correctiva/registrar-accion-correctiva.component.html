@@ -1,0 +1,161 @@
+<app-header
+  [title]="'Registrar Acción Correctiva o Preventiva'"
+  [logoUrl]="'assets/images/indra/logo_indra.png'"
+  [headerImageUrl]="'assets/images/indra/edificio_indra.png'"
+>
+</app-header>
+
+<div class="container">
+  <div class="form-container">
+    <form class="form-grid" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="sociedad">Sociedad</label>
+        <select id="sociedad" formControlName="sociedad">
+          <option value="">Seleccionar Nombre de la Sociedad...</option>
+          <option *ngFor="let sociedad of sociedades" [value]="sociedad">
+            {{ sociedad }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <select id="tipo" formControlName="tipo">
+          <option value="">Seleccionar el tipo...</option>
+          <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="origen">Origen de Hallazgo</label>
+        <select id="origen" formControlName="origen">
+          <option value="">Seleccionar el Origen del Hallazgo...</option>
+          <option *ngFor="let origen of origenes" [value]="origen">
+            {{ origen }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fechaPublicacion">Fecha Publicación Hallazgo</label>
+        <input
+          id="fechaPublicacion"
+          type="date"
+          formControlName="fechaPublicacion"
+        />
+      </div>
+
+      <div class="form-group-full">
+        <label for="detalle">Detalle de Hallazgo</label>
+        <textarea
+          id="detalle"
+          formControlName="detalle"
+          placeholder="Registrar el Detalle del Hallazgo..."
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="accionesCorrectivas">Acciones Correctivas</label>
+        <input
+          id="accionesCorrectivas"
+          type="text"
+          formControlName="accionesCorrectivas"
+          placeholder="Registrar Acciones Reparadoras..."
+        />
+      </div>
+      <div class="form-group">
+        <label for="accionesPreventivas">Acciones Preventivas</label>
+        <input
+          id="accionesPreventivas"
+          type="text"
+          formControlName="accionesPreventivas"
+          placeholder="Registrar Acciones Preventivas..."
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaMaxCorrectiva">Fecha Máxima Realización</label>
+        <input
+          id="fechaMaxCorrectiva"
+          type="date"
+          formControlName="fechaMaxCorrectiva"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaMaxPreventiva">Fecha Máxima Realización</label>
+        <input
+          id="fechaMaxPreventiva"
+          type="date"
+          formControlName="fechaMaxPreventiva"
+        />
+      </div>
+      <div class="form-group">
+        <label for="responsableCorrectiva">Responsable</label>
+        <select
+          id="responsableCorrectiva"
+          formControlName="responsableCorrectiva"
+        >
+          <option value="">Seleccionar el Responsable...</option>
+          <option
+            *ngFor="let responsable of responsables"
+            [value]="responsable"
+          >
+            {{ responsable }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="responsablePreventiva">Responsable</label>
+        <select
+          id="responsablePreventiva"
+          formControlName="responsablePreventiva"
+        >
+          <option value="">Seleccionar el Responsable...</option>
+          <option
+            *ngFor="let responsable of responsables"
+            [value]="responsable"
+          >
+            {{ responsable }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="estadoCorrectiva">Estado Acción Correctiva</label>
+        <select id="estadoCorrectiva" formControlName="estadoCorrectiva">
+          <option value="">Seleccionar Estado...</option>
+          <option *ngFor="let estado of estados" [value]="estado.value">
+            {{ estado.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="estadoPreventiva">Estado Acción Preventiva</label>
+        <select id="estadoPreventiva" formControlName="estadoPreventiva">
+          <option value="">Seleccionar Estado...</option>
+          <option *ngFor="let estado of estados" [value]="estado.value">
+            {{ estado.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group-full">
+        <label for="observaciones">Observaciones</label>
+        <textarea
+          id="observaciones"
+          formControlName="observaciones"
+          placeholder="Registrar Observaciones..."
+        ></textarea>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn-buscar" [disabled]="!onFormValid()">
+          Guardar
+        </button>
+        <button type="button" class="btn-cancelar" (click)="onCancel()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,8 +1,10 @@
 {
   "routes": [
+    "/consultar-accion-correctiva",
     "/consultar-acto-inseguro",
     "/dashboard",
     "/inbox-acto-inseguro",
-    "/login"
+    "/login",
+    "/registrar-accion-correctiva"
   ]
 }

@@ -7,7 +7,7 @@ import { HeaderComponent } from '../../shared/header/header.component';
   standalone: true,
   imports: [HeaderComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements OnInit {
   fullName: string = '';
@@ -39,5 +39,8 @@ export class DashboardComponent implements OnInit {
 
   navigateToInboxActoInseguro() {
     this.router.navigate(['/inbox-acto-inseguro']);
+  }
+  navigateToAccionCorrectivaPreventiva() {
+    this.router.navigate(['/registrar-accion-correctiva']);
   }
 }
