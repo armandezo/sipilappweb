@@ -40,7 +40,10 @@ export class DashboardComponent implements OnInit {
   navigateToInboxActoInseguro() {
     this.router.navigate(['/inbox-acto-inseguro']);
   }
-  navigateToAccionCorrectivaPreventiva() {
+  navigateToRegistrarAccionCorrectivaPreventiva() {
     this.router.navigate(['/registrar-accion-correctiva']);
+  }
+  navigateToConsultarAccionCorrectivaPreventiva() {
+    this.router.navigate(['/consultar-accion-correctiva']);
   }
 }
