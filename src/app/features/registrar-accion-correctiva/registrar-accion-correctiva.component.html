@@ -108,7 +108,6 @@
       <div class="form-group">
         <label for="estadoCorrectiva">Estado Acción Correctiva</label>
         <select id="estadoCorrectiva" formControlName="estadoCorrectiva">
-          <option value="">Seleccionar Estado...</option>
           <option *ngFor="let estado of estados" [value]="estado.value">
             {{ estado.label }}
           </option>
@@ -118,7 +117,6 @@
       <div class="form-group">
         <label for="estadoPreventiva">Estado Acción Preventiva</label>
         <select id="estadoPreventiva" formControlName="estadoPreventiva">
-          <option value="">Seleccionar Estado...</option>
           <option *ngFor="let estado of estados" [value]="estado.value">
             {{ estado.label }}
           </option>

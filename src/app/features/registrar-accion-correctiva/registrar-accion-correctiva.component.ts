@@ -38,7 +38,7 @@ export class RegistrarAccionCorrectivaComponent {
     'Proyectos',
   ];
   estados = [
-    { value: '', label: 'Seleccionar un estado' },
+    { value: '', label: 'Seleccionar un estado...' },
     { value: 'abierto', label: 'Abierto' },
     { value: 'implementado', label: 'Implementado' },
     { value: 'cerrado', label: 'Cerrado' },
